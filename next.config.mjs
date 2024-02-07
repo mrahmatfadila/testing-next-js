@@ -21,15 +21,14 @@ const nextConfig = {
   }
 };
 
-const webpackConfig = (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-  // Menangani masalah modul 'fs' pada sisi klien
+const webpackConfig = (config, { isServer }) => {
   if (!isServer) {
+    // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty'
     };
   }
 
-  // Penting: Kembalikan konfigurasi yang dimodifikasi
   return config;
 };
 
