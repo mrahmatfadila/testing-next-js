@@ -31,9 +31,9 @@ export async function getServerSideProps( { params, }: {params: {product: string
 
     return {
         props: {
-            product: response.data
-        }
-    }
+            product: response.data,
+        },
+    };
 }
 
 // export async function getStaticPaths() {
