@@ -1,3 +1,5 @@
+// next.config.mjs
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -19,5 +21,17 @@ const nextConfig = {
   }
 };
 
+const webpackConfig = (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  // Menangani masalah modul 'fs' pada sisi klien
+  if (!isServer) {
+    config.node = {
+      fs: 'empty'
+    };
+  }
 
+  // Penting: Kembalikan konfigurasi yang dimodifikasi
+  return config;
+};
+
+export { webpackConfig as webpack };
 export default nextConfig;
