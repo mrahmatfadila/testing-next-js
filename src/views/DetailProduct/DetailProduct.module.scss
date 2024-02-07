@@ -1,0 +1,23 @@
+.productDetail {
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+    &__name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    &__category {
+        color: grey;
+        margin-top: 5px;
+    }
+    &__price {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+}
